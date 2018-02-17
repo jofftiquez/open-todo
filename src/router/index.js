@@ -1,9 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
-import Dashboard from '@/components/dashboard';
+import Dashboard from '@/components/dashboard/dashboard';
+import Tasks from '@/components/dashboard/tasks';
+import Teams from '@/components/dashboard/teams';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -16,7 +18,26 @@ export default new Router({
     {
       path: '/dashboard',
       name: 'Dashboard',
-      component: Dashboard
+      redirect: 'Tasks',
+      component: Dashboard,
+      children: [
+        {
+          path: '',
+          name: 'Tasks',
+          component: Tasks,
+          meta: {
+            title: 'Console'
+          }
+        },
+        {
+          path: '/teams',
+          name: 'Teams',
+          component: Teams,
+          meta: {
+            title: 'Teams'
+          }
+        },
+      ]
     }
   ]
 })
