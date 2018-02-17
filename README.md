@@ -1,6 +1,6 @@
 # open-todo
 
-> Open source collaborative todo application.
+Open source real-time collaborative todo application using firebase 🔥.
 
 ## Build Setup
 
@@ -18,4 +18,31 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Usage
+
+A `.config.json` file is required to run this application. This config file contains the app settings and **firebase** config. 
+
+**.config.json template**
+
+```json
+{
+  "name": "ToDo na to!",
+  "firebase": {
+    "apiKey": "AIzaSyAXbppWOafgGJ25qOJXT44-GO9WfQJOJp4",
+    "authDomain": "open-todo.firebaseapp.com",
+    "databaseURL": "https://open-todo.firebaseio.com",
+    "projectId": "open-todo",
+    "storageBucket": "",
+    "messagingSenderId": "488230540023"
+  },
+  "theme": {
+    "primary": "#43A047",
+    "secondary": "#424242",
+    "accent": "#82B1FF",
+    "error": "#FF5252",
+    "info": "#2196F3",
+    "success": "#4CAF50",
+    "warning": "#FFC107"
+  }
+}
+```
