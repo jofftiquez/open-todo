@@ -28,12 +28,12 @@ A `.config.json` file is required to run this application. This config file cont
 {
   "name": "ToDo na to!",
   "firebase": {
-    "apiKey": "AIzaSyAXbppWOafgGJ25qOJXT44-GO9WfQJOJp4",
-    "authDomain": "open-todo.firebaseapp.com",
-    "databaseURL": "https://open-todo.firebaseio.com",
-    "projectId": "open-todo",
-    "storageBucket": "",
-    "messagingSenderId": "488230540023"
+    "apiKey": "...",
+    "authDomain": "...",
+    "databaseURL": "...",
+    "projectId": "...",
+    "storageBucket": "...",
+    "messagingSenderId": "..."
   },
   "theme": {
     "primary": "#43A047",
