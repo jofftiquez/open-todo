@@ -1,12 +1,17 @@
 <template lang="pug">
   main
-    v-toolbar(dense color="green-50").elevation-0
+    v-toolbar(dense).elevation-0
+      v-toolbar-title 
+        v-icon assignment
+        | Tasks
     v-container
       v-layout(v-bind="binding").ma-1
         v-flex(xs12 md4).pa-1
           v-card
+            v-footer.pa-1 
+              strong Today
             v-card-text(style="height: 400px; overflow: auto;").pa-2
-              v-card(flat v-for="x in [0,1,2,3,4,5,6]").elevation-1.mb-2
+              v-card(flat v-for="(x, i) in [0,1,2,3,4,5,6]" :key="i").elevation-1.mb-2
                 v-card-text.pa-2
                   small Title
                   p 
@@ -31,19 +36,17 @@
                     v-btn(icon slot="activator").primary--text 
                       v-icon archive
                     | Archive
-
-            v-footer.pa-1 
-              strong Today
         v-flex(xs12 md4).pa-1
           v-card
-            v-card-text
             v-footer.pa-1 
               strong Upcoming
+            v-card-text
         v-flex(xs12 md4).pa-1
+          v-footer.pa-1
+            strong Done
           v-card
             v-card-text
-            v-footer.pa-1
-              strong Done
+            
 </template>
 
 <script>
