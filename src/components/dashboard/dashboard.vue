@@ -72,28 +72,6 @@
           )
     v-content
       router-view
-    v-tooltip(top) 
-      v-btn(
-        color="primary"
-        slot="activator"
-        fab
-        bottom
-        right
-        fixed
-        @click.stop="addTaskDialog = !addTaskDialog"
-      )
-        v-icon add
-      | Add Task
-    v-dialog(
-      v-model="addTaskDialog" width="800px"
-    )
-      v-card
-        v-card-title(class="grey lighten-4 py-4 title") Create contact
-        v-container(grid-list-sm class="pa-4")
-          v-layout(row wrap)
-        v-card-actions
-          v-spacer
-          v-btn(flat color="primary" @click="addTaskDialog = false") Save
 </template>
 
 <script>
@@ -102,7 +80,6 @@
       source: String
     },
     data: () => ({
-      addTaskDialog: false,
       drawer: null,
       items: [
         { icon: 'assignment', text: 'Tasks', to: 'Tasks' },
