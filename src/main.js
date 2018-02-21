@@ -3,16 +3,19 @@ import App from './App';
 import router from './router';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
-import store from './vuex';
 import './firebase';
 import 'babel-polyfill';
 import colors from 'vuetify/es5/util/colors';
+import store from './vuex';
+import morphling from 'morphling';
 
-console.log(colors)
+console.log(colors);
  
 Vue.use(Vuetify, {
   theme: store.getters['config/theme']
 });
+
+Vue.use(morphling);
 
 Vue.config.productionTip = false;
 
