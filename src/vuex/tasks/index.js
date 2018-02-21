@@ -1,6 +1,7 @@
-// import { 
-//   streamTasks
-// } from '../../firebase/signup-history';
+import { 
+  createTask,
+  streamTasks
+} from '../../firebase/tasks';
 
 const state = {
   tasks: []
@@ -11,16 +12,19 @@ const getters = {
 }
 
 const actions = {
-  // streamSignupHistory: ({commit, dispatch}) => {
-  //   streamSignupHistory().subscribe({
-  //     next: data => commit('setSignupHistory', data),
-  //     error: e => console.error(e)
-  //   });
-  // }
+  createTask: async ({commit}, task) => {
+    await createTask(task);
+  },
+  streamTasks: ({commit, dispatch}) => {
+    streamTasks().subscribe({
+      next: data => commit('setTasks', data),
+      error: e => console.error(e)
+    });
+  }
 }
 
 const mutations = {
-  setTasks: (s, data) => s.setTasks = data
+  setTasks: (s, data) => s.tasks = data
 }
 
 export default {
